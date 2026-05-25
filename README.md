@@ -1,3 +1,5 @@
+[![skills.sh](https://skills.sh/b/apify/agent-skills)](https://skills.sh/apify/agent-skills)
+
 <p align="center">
   <img src="https://docs.apify.com/img/apify_logo.svg" alt="Apify" width="96" height="96">
 </p>
@@ -12,7 +14,7 @@
   <a href="https://apify.com"><img src="https://img.shields.io/badge/Powered%20by-Apify-20A34E?style=for-the-badge" alt="Powered by Apify"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache--2.0-555555?style=for-the-badge" alt="Apache 2.0"></a>
   <a href="#skills"><img src="https://img.shields.io/badge/Skills-5-246DFF?style=for-the-badge" alt="5 Skills"></a>
-  <a href="https://apify.com/store"><img src="https://img.shields.io/badge/Actors-25%2C000%2B-F86606?style=for-the-badge" alt="25,000+ Actors"></a>
+  <a href="https://apify.com/store"><img src="https://img.shields.io/badge/Actors-30%2C000%2B-F86606?style=for-the-badge" alt="30,000+ Actors"></a>
   <a href="https://mcp.apify.com/"><img src="https://img.shields.io/badge/MCP-Compatible-15C1E6?style=for-the-badge" alt="MCP Compatible"></a>
   <a href="https://github.com/apify/agent-skills/stargazers"><img src="https://img.shields.io/github/stars/apify/agent-skills?style=for-the-badge&color=9D97F4&label=Stars" alt="GitHub stars"></a>
 </p>
@@ -33,7 +35,7 @@
 
 Drop these skills into Claude Code, Cursor, Windsurf, Codex, or Gemini CLI and your AI agent gets expert hands on the Apify platform - the marketplace for web data and AI tools. With one install, agents can:
 
-- **Scrape any site** - built-in Actor selection across the major social, search, maps, real estate, and review platforms (Instagram, Facebook, TikTok, YouTube, X, LinkedIn, Google Maps, Reddit, Yelp, Airbnb, and more), 130+ curated Actors, plus automatic fallback to the full [Apify Store](https://apify.com/store) of 25,000+ Actors for everything else.
+- **Scrape any site** - built-in Actor selection across the major social, search, maps, real estate, and review platforms (Instagram, Facebook, TikTok, YouTube, X, LinkedIn, Google Maps, Reddit, Yelp, Airbnb, and more), 130+ curated Actors, plus automatic fallback to the full [Apify Store](https://apify.com/store) of 30,000+ Actors for everything else.
 - **Build new Actors** - generate, debug, and deploy serverless Actors in JavaScript, TypeScript, or Python with the official SDK patterns.
 - **Actorize existing code** - wrap any script, library, or CLI tool as a runnable Actor with proper input and output handling.
 - **Generate output schemas** - auto-derive `dataset_schema.json`, `output_schema.json`, and `key_value_store_schema.json` from existing Actor source.
@@ -136,15 +138,12 @@ Reference the skill files directly:
 
 ## Useful resources
 
-- **[mcp.apify.com](https://mcp.apify.com/)** - hosted MCP server configurator. Pick the Actors you want exposed as MCP tools and get a one-line URL for any MCP-compatible client.
-- **[Apify MCP server documentation](https://docs.apify.com/platform/integrations/mcp)** - architecture, transport modes, auth, and client setup for self-hosted or hosted MCP.
 - **[Introducing Apify Agent Skills](https://blog.apify.com/introducing-apify-agent-skills/)** - the launch post: why we built these, how they work under the hood, and what's next.
-- **[apify/mcpc](https://github.com/apify/mcpc)** - the MCP CLI for managing named MCP sessions across hosts and stacks.
-- **[apify/awesome-skills](https://github.com/apify/awesome-skills)** - community-maintained collection of domain-specific skills (lead gen, brand monitoring, competitor intel, and more).
-- **[Apify Store](https://apify.com/store)** - browse 25,000+ ready-made Actors for scraping and automation.
-- **[apify/actor-templates](https://github.com/apify/actor-templates)** - starter templates the `apify-actor-development` skill uses under the hood.
 - **[Apify CLI](https://github.com/apify/apify-cli)** - the command-line tool that powers local Actor development, deployment, and authentication.
-- **[Crawlee](https://crawlee.dev)** - the open-source Node.js and Python scraping library most Apify Actors are built on.
+- **[apify/awesome-skills](https://github.com/apify/awesome-skills)** - community-maintained collection of domain-specific skills (lead gen, brand monitoring, competitor intel, and more).
+- **[mcp.apify.com](https://mcp.apify.com/)** - hosted MCP server configurator. Pick the Actors you want exposed as MCP tools and get a one-line URL for any MCP-compatible client.
+- **[Apify Store](https://apify.com/store)** - browse 30,000+ ready-made Actors for scraping and automation.
+- **[apify/mcpc](https://github.com/apify/mcpc)** - the MCP CLI for managing named MCP sessions across hosts and stacks.
 
 ---
 
