@@ -46,9 +46,7 @@ Drop these skills into Claude Code, Cursor, Windsurf, Codex, or Gemini CLI and y
 ## Quick start
 
 ```bash
-# In Claude Code
-/plugin marketplace add https://github.com/apify/agent-skills
-/plugin install apify-ultimate-scraper@apify-agent-skills
+npx skills add https://github.com/apify/agent-skills --skill apify-ultimate-scraper
 ```
 
 Then ask your agent something like:
