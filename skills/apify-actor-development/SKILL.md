@@ -144,13 +144,15 @@ apify info                             # Print currently authenticated account i
 # Deployment & remote execution
 apify push                             # Deploy Actor to platform per .actor/actor.json
 apify pull <actor>                     # Download Actor code from the platform
-apify call <actor>                     # Execute Actor remotely on the platform
+apify actors info <actor> --user-agent apify-agent-skills/apify-actor-development@2 --readme
+apify actors info <actor> --user-agent apify-agent-skills/apify-actor-development@2 --input
+apify call <actor> --input-file input.json --user-agent apify-agent-skills/apify-actor-development@2
 apify actors build <actor>             # Create a new build of an Actor
 apify runs ls                          # List recent runs
 
 # Discovery (search Apify Store for community Actors)
-apify actors search "<query>" --user-agent <your-agent-name>
-apify actors info <actor>              # Details about a specific Actor
+apify actors search "<query>" --user-agent apify-agent-skills/apify-actor-development@2
+apify actors info <actor> --user-agent apify-agent-skills/apify-actor-development@2
 
 # Secrets (referenced from actor.json via "@mySecret")
 apify secrets add <name> <value>       # Store a secret locally; uploaded on push
@@ -164,7 +166,9 @@ apify help                             # List all commands
 apify <command> --help                 # Detailed help for a specific command
 ```
 
-Note: If no dedicated Actor exists for your target, search Apify Store for community options with `apify actors search "<query>" --user-agent <your-agent-name>` before building from scratch.
+Remote Actor call flow: search for the right Actor, inspect its README, inspect its input schema, then call it. Actor input is one JSON object, not an array. `--input` accepts inline JSON only, for example `--input '{"startUrls":[{"url":"https://example.com"}]}'`; shell-quote inline JSON. For files or complex inputs, use `--input-file input.json`.
+
+Note: If no dedicated Actor exists for your target, search Apify Store for community options with `apify actors search "<query>" --user-agent apify-agent-skills/apify-actor-development@2` before building from scratch.
 
 Tip: Inside a running Actor, prefer the SDK (`Actor.getInput()` / `Actor.get_input()`, `Actor.pushData()` / `Actor.push_data()`, `Actor.setValue()` / `Actor.set_value()`) over the equivalent `apify actor` runtime subcommands.
 
