@@ -167,13 +167,24 @@ apify help                             # List all commands
 apify <command> --help                 # Detailed help for a specific command
 ```
 
-Remote Actor call flow: search for the right Actor, inspect its README, inspect its input schema with `apify actors info <actor> --input`, then call it. Actor input is one JSON object, not an array. `--input` accepts inline JSON object input only; wrap inline JSON in quotes to avoid shell parsing issues, for example `--input '{"startUrls":[{"url":"https://example.com"}]}'`. For JSON files or complex inputs, use `--input-file input.json`.
+### Remote Actor calls
 
-Note: If no dedicated Actor exists for your target, search Apify Store for community options with `apify actors search "<query>"` before building from scratch.
+When running Actors remotely, use this flow:
 
-Tip: Inside a running Actor, prefer the SDK (`Actor.getInput()` / `Actor.get_input()`, `Actor.pushData()` / `Actor.push_data()`, `Actor.setValue()` / `Actor.set_value()`) over the equivalent `apify actor` runtime subcommands.
+1. Search for the right Actor with `apify actors search "<query>"`.
+2. Inspect its README with `apify actors info <actor> --readme`.
+3. Inspect its input schema with `apify actors info <actor> --input`.
+4. Call it with either `--input-file input.json` or quoted inline JSON.
 
-**IMPORTANT:** Always use `apify run` to test Actors locally. Do not use `npm run start`, `npm start`, `yarn start`, or other package manager commands - these will not properly configure the Apify environment and storage.
+Actor input is one JSON object, not an array. `--input` accepts inline JSON object input only; wrap inline JSON in quotes to avoid shell parsing issues, for example `--input '{"startUrls":[{"url":"https://example.com"}]}'`. For JSON files or complex inputs, use `--input-file input.json`.
+
+If no dedicated Actor exists for your target, search Apify Store for community options before building from scratch.
+
+### Local and runtime commands
+
+Always use `apify run` to test Actors locally. Do not use `npm run start`, `npm start`, `yarn start`, or other package manager commands - these will not properly configure the Apify environment and storage.
+
+Inside a running Actor, prefer the SDK (`Actor.getInput()` / `Actor.get_input()`, `Actor.pushData()` / `Actor.push_data()`, `Actor.setValue()` / `Actor.set_value()`) over the equivalent `apify actor` runtime subcommands.
 
 ## Apify platform environment
 
