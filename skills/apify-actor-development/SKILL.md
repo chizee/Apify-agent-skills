@@ -147,6 +147,7 @@ apify pull <actor>                     # Download Actor code from the platform
 apify actors info <actor> --readme     # Inspect Actor documentation
 apify actors info <actor> --input      # Inspect Actor input schema
 apify call <actor> --input-file input.json
+apify call <actor> --input '{"startUrls":[{"url":"https://example.com"}]}'
 apify actors build <actor>             # Create a new build of an Actor
 apify runs ls                          # List recent runs
 
