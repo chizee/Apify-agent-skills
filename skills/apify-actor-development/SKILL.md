@@ -144,15 +144,15 @@ apify info                             # Print currently authenticated account i
 # Deployment & remote execution
 apify push                             # Deploy Actor to platform per .actor/actor.json
 apify pull <actor>                     # Download Actor code from the platform
-apify actors info <actor> --user-agent apify-agent-skills/apify-actor-development --readme
-apify actors info <actor> --user-agent apify-agent-skills/apify-actor-development --input
-apify call <actor> --input-file input.json --user-agent apify-agent-skills/apify-actor-development
+apify actors info <actor> --readme     # Inspect Actor documentation
+apify actors info <actor> --input      # Inspect Actor input schema
+apify call <actor> --input-file input.json
 apify actors build <actor>             # Create a new build of an Actor
 apify runs ls                          # List recent runs
 
 # Discovery (search Apify Store for community Actors)
-apify actors search "<query>" --user-agent apify-agent-skills/apify-actor-development
-apify actors info <actor> --user-agent apify-agent-skills/apify-actor-development
+apify actors search "<query>"
+apify actors info <actor>
 
 # Secrets (referenced from actor.json via "@mySecret")
 apify secrets add <name> <value>       # Store a secret locally; uploaded on push
@@ -166,9 +166,9 @@ apify help                             # List all commands
 apify <command> --help                 # Detailed help for a specific command
 ```
 
-Remote Actor call flow: search for the right Actor, inspect its README, inspect its input schema, then call it. Actor input is one JSON object, not an array. `--input` accepts inline JSON only, for example `--input '{"startUrls":[{"url":"https://example.com"}]}'`; shell-quote inline JSON. For files or complex inputs, use `--input-file input.json`.
+Remote Actor call flow: search for the right Actor, inspect its README, inspect its input schema with `apify actors info <actor> --input`, then call it. Actor input is one JSON object, not an array. `--input` accepts inline JSON object input only; wrap inline JSON in quotes to avoid shell parsing issues, for example `--input '{"startUrls":[{"url":"https://example.com"}]}'`. For JSON files or complex inputs, use `--input-file input.json`.
 
-Note: If no dedicated Actor exists for your target, search Apify Store for community options with `apify actors search "<query>" --user-agent apify-agent-skills/apify-actor-development` before building from scratch.
+Note: If no dedicated Actor exists for your target, search Apify Store for community options with `apify actors search "<query>"` before building from scratch.
 
 Tip: Inside a running Actor, prefer the SDK (`Actor.getInput()` / `Actor.get_input()`, `Actor.pushData()` / `Actor.push_data()`, `Actor.setValue()` / `Actor.set_value()`) over the equivalent `apify actor` runtime subcommands.
 
